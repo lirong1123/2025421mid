@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>113互動程式設計期中報告</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+
+    <ul class="menu">
+        <a class="logo"></a> 
+        <li onclick="closeIframe()">首頁</li>
+        <li onclick="loadIframe('https://lirong1123.github.io/2025419/')">自我介紹</li>
+        <li class="dropdown">作品集
+            <ul class="submenu">
+                <li onclick="loadIframe('https://lirong1123.github.io/re20250311/')">作品1</li>
+                <li onclick="loadIframe('https://lirong1123.github.io/20250325/')">作品2</li>
+                <li onclick="loadIframe('https://lirong1123.github.io/2025419/')">自我介紹</li>
+                <li onclick="loadIframe('https://www.tku.edu.tw/')">淡江大學</li>
+            </ul>
+        </li>
+        <li onclick="loadIframe('https://mentokusai2334.h5p.com/content/1292565845492335898/embed')">測驗卷</li>
+        <li onclick="loadIframe('https://cfchen58.synology.me/%E4%BA%92%E5%8B%95%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/1132/week3/20250304_091843.mp4')">教學影片</li>
+    </ul>
+    <iframe id="content-frame"></iframe>
+
+    <div id="ghost-grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+            <!-- prettier-ignore -->
+            <svg viewBox="0 0 14 14">
+                <defs>
+                    <rect id="pixel-dot-rect" x="0.175" y="0.175" width="0.7" height="0.7" rx="0.2" />
+                    <pattern id="pixel-dot-pattern" viewBox="0 0 1 1" width="1" height="1" patternUnits="userSpaceOnUse">
+                        <use fill="hsl(152, 41%, 63%)" href="#pixel-dot-rect" />
+                    </pattern>
+                    <mask id="pixel-dot-mask">
+                        <rect fill="white" width="14" height="14" />
+                        <path transform="translate(0 0.5)" fill="none" stroke="black" d="M 0 0 h5M 9 0h5 M 0 1h3 M 11 1h3 M 0 2h2 M 12 2h2M 0 3h1 M 13 3h1M 0 4h1 M 13 4h1 M 0 5h1 M 13 5h1 M 4 12h1 M 9 12h1 M 0 13h1 M 3 13h3 M8 13h3 M 13 13h1" />
+                    </mask>
+                </defs>
+                <rect mask="url(#pixel-dot-mask)" fill="url(#pixel-dot-pattern)" width="14" height="14" />
+                <g class="eye">
+                    <g transform="translate(2 3)">
+                        <path transform="translate(0 0.5)" fill="none" stroke="white" d="M 1 0 h2 M 0 1h4 M 0 2h4 M 0 3h4 M 1 4h2" />
+                        <g fill="black" class="dot">
+                            <use transform="translate(1 1)" href="#pixel-dot-rect" />
+                            <use transform="translate(2 1)" href="#pixel-dot-rect" />
+                            <use transform="translate(1 2)" href="#pixel-dot-rect" />
+                            <use transform="translate(2 2)" href="#pixel-dot-rect" />
+                        </g>
+                    </g>
+                </g>
+                <g class="eye">
+                    <g transform="translate(8 3)">
+                        <path transform="translate(0 0.5)" fill="none" stroke="white" d="M 1 0 h2 M 0 1h4 M 0 2h4 M 0 3h4 M 1 4h2" />
+                        <g fill="black" class="dot">
+                            <use transform="translate(1 1)" href="#pixel-dot-rect" />
+                            <use transform="translate(2 1)" href="#pixel-dot-rect" />
+                            <use transform="translate(1 2)" href="#pixel-dot-rect" />
+                            <use transform="translate(2 2)" href="#pixel-dot-rect" />
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="home">
+        <p>這裡是什麼都沒有的首頁</p>
+    </div>
+</body>
+</html>

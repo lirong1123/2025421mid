@@ -1,0 +1,195 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(248, 231, 210);
+}
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(-100%); /* 初始隱藏 */
+    transition: transform 0.5s ease; /* 平滑過渡效果 */
+    background-color: rgb(240, 204, 156);
+    color: rgb(51, 34, 8);
+}
+
+.menu li {
+    font-size: 30px;
+    margin-left: 50px; 
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+    position: relative; /* 為了讓子選單定位 */
+    background-color: rgb(240, 204, 156);
+}
+
+.menu li:hover {
+    background-color: rgb(219, 185, 142);
+}
+
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none; /* 預設隱藏子選單 */
+    position: absolute;
+    top: 100%; /* 子選單顯示在父選單下方 */
+    left: 0;
+    background-color: rgb(240, 204, 156);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submenu li {
+    font-size: 20px;
+    margin-left: 0; /* 子選單項目不需要左邊距 */
+    padding: 5px 10px;
+    white-space: nowrap; /* 防止文字換行 */
+}
+
+.submenu li:hover {
+    background-color: rgb(219, 185, 142);
+}
+
+.dropdown:hover .submenu {
+    display: block; /* 滑鼠移入時顯示子選單 */
+}
+iframe {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    display: none; 
+    margin-top: 50px; /* 為了讓 iframe 不被菜單遮住 */
+}
+#content-frame {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    border: none;
+}
+.logo {
+    width: 94px; /* 單一幀的寬度 */
+    height: 66px; /* 單一幀的高度 */
+    background-image: url('https://t1.pixhost.to/thumbs/5037/587871403_verp.png'); /* 替換為您的圖片網址 */
+    background-size: 280px 66px; /* 設定整張圖片的大小 */
+    animation: logoAnimation 1s steps(3) infinite; /* 1秒內播放3幀，無限循環 */
+    position: absolute;
+    left: 20px; /* 調整位置 */
+}
+
+@keyframes logoAnimation {
+    0% {
+        background-position: 0 0; /* 第一幀 */
+    }
+    100% {
+        background-position: -279px 0; /* 最後一幀 */
+    }
+}
+@property --x {
+	syntax: "<number>";
+	inherits: true;
+	initial-value: 0;
+}
+
+@property --y {
+	syntax: "<number>";
+	inherits: true;
+	initial-value: 0;
+}
+
+#ghost-grid {
+	block-size: 100svb;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	--x: 0;
+	--y: 0;
+}
+
+div:has(svg) {
+	display: flex;
+	container-type: inline-size;
+
+	svg {
+		margin: auto;
+		inline-size: 100%;
+		max-inline-size: 40cqmin;
+		block-size: auto;
+	}
+}
+
+#ghost-grid:has(div:nth-child(1):hover) {
+	--x: -1;
+	--y: -1;
+}
+
+#ghost-grid:has(div:nth-child(2):hover) {
+	--x: 0;
+	--y: -1;
+}
+
+#ghost-grid:has(div:nth-child(3):hover) {
+	--x: 1;
+	--y: -1;
+}
+
+#ghost-grid:has(div:nth-child(4):hover) {
+	--x: -1;
+	--y: 0;
+}
+
+#ghost-grid:has(div:nth-child(5):hover) {
+	--x: 0;
+	--y: 0;
+}
+
+#ghost-grid:has(div:nth-child(6):hover) {
+	--x: 1;
+	--y: 0;
+}
+
+#ghost-grid:has(div:nth-child(7):hover) {
+	--x: -1;
+	--y: 1;
+}
+
+#ghost-grid:has(div:nth-child(8):hover) {
+	--x: 0;
+	--y: 1;
+}
+
+#ghost-grid:has(div:nth-child(9):hover) {
+	--x: 1;
+	--y: 1;
+}
+
+#ghost-grid svg :is(.eye, .dot) {
+	transition-property: --x, --y;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+	translate: calc(var(--x) * 1px) calc(var(--y) * 1px);
+}
+/* 將.home放置在所有圖層最上面，並至於畫面正中間 */
+.home {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* 確保在最上層 */
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.home h1 {
+    font-size: 24px;
+    margin: 0;
+    color: rgb(51, 34, 8);
+}
+
+
